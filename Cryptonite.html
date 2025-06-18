@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptonite - מטבעות דיגיטליים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">Cryptonite</a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="reports">Live Server</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="search" id="searchInput" placeholder="Search..." class="search-input">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="parallax-container">
+        <div class="parallax-content">
+            <h1 class="main-title">Cryptonite</h1>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section id="homePage" class="page active">
+            <div class="container">
+                <div class="loader" id="mainLoader">
+                    <div class="spinner"></div>
+                    <p>טוען מטבעות...</p>
+                </div>
+                <div id="coinsContainer" class="coins-grid"></div>
+            </div>
+        </section>
+
+        <section id="reportsPage" class="page">
+            <div class="container">
+                <h2 class="page-title">Live Reports</h2>
+                <div id="chartContainer">
+                    <canvas id="liveChart"></canvas>
+                    <div id="noCoinsSelected" class="empty-state">
+                        <p>לא נבחרו מטבעות להצגה</p>
+                        <p>חזור לדף הבית ובחר עד 5 מטבעות</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="aboutPage" class="page">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="page-title">About</h2>
+                    <div class="about-card">
+                        <img src='image1.jpeg' alt="Profile" class="profile-image">
+                        <h3>Ibraheem esa</h3>
+                        <p>תיאור הפרויקט: אתר למעקב אחר מטבעות דיגיטליים בזמן אמת</p>
+                        <p>הפרויקט פותח כחלק מקורס Full Stack Web Developer</p>
+                        <p>טכנולוגיות: HTML5, CSS3, JavaScript, AJAX</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="maxCoinsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Maximum Coins Reached</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>ניתן לבחור עד 5 מטבעות בלבד.</p>
+                <p>כדי להוסיף את <span id="newCoinName"></span>, בחר מטבע להסרה:</p>
+                <div id="selectedCoinsList"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">CLOSE</button>
+                <button class="btn btn-primary" onclick="confirmSelection()">CONFIRM</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
